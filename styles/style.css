@@ -1,0 +1,84 @@
+.logo{
+    width: 60px;
+    animation: circle 10.0s infinite linear;
+}
+@keyframes circle {
+    from {
+        transform: rotate(0deg);
+    }
+    to { 
+        transform: rotate(360deg);
+    }
+}
+
+*{
+    font-family: 'poppins';
+}
+.banner {
+    background-image: linear-gradient(#00000000, rgb(0, 0, 0)), url(../images/banner.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.banner-content h1{
+    font-size: 48px;
+    color: #fff;
+}
+.down-arrow{
+    animation: updown .9s infinite linear;
+    animation-direction: alternate;
+    transition: .4s all;
+    position: absolute;
+    top: 86%;
+    left: 50%;
+
+}
+@keyframes updown{
+    0%{
+        top: 78%;
+    } 
+    100%{
+        top: 88%;
+    }
+}
+
+.logo-text{
+    margin-left: 10px;
+    color: #fff;
+    font-size: 30px;
+    font-family: 'Orbitron', sans-serif;
+}
+.logo_anchor{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+.nav-link{
+    color: #fff;
+    font-size: 18px;
+    margin: 0 15px;
+}
+.nav-link:hover{
+    color: #fff;
+}
+.nav-link:focus{
+    color: #fff;
+}
+.card-img-container{
+    text-align: center;
+}
+.card-img{
+    width: fit-content;
+    margin: 15px 0;
+    transition: .4s all ease-in-out;
+}
+.card-img:hover{
+    transform: scale(1.2);
+}

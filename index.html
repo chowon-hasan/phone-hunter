@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>API Functionality</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/d0a099b5e9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <header>
+
+      <section class="bg-dark">
+        <div class="container">
+          <div class="row d-flex justify-content-center align-items-center">
+
+            <div class="col-lg-3">
+              <div class="logo-container">
+                <a href="" class="logo_anchor"
+                  ><img src="images/logo.png" class="logo" alt="" />
+                  <span class="logo-text">Phone Hunter</span></a>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="navbar_container">
+                  <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Hot Products</a>
+                          </li>
+                          
+                        </ul>
+                                
+                      </div>
+                    </div>
+                  </nav>
+              </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="icons-container d-flex justify-content-around align-items-center">
+                  <div class="icon">
+                    <a href=""><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></a>
+                   </div>
+                   <div class="country-container">
+                    <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown button
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                    </div>
+                   </div>
+                </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      
+    </header>
+
+    <main>
+      <section class="banner">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="banner-content">
+                    <h1>Welcome to the</h1>
+                    <h1> Phone Hunter</h1>
+                    <h4 class="text-white">Purchase Your Device Today. </h4>
+                    <p class="text-white mt-4">You can follow us on here</p>
+                    <div class="banner-icons">
+                      <a href="" class="text-decoration-none text-white" >
+                        <i class="fa-brands fa-facebook-f"></i>
+                      <i class="fa-brands fa-twitter mx-5"></i>
+                      <i class="fa-brands fa-instagram"></i>
+                      </a>
+                    </div>
+              </div>
+            </div>
+            <div class="down-icon text-white">
+              <i class="fa-solid fa-arrow-down down-arrow"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="Search-container">
+          <h1 class="text-center my-5">Search Your Products Here</h1>
+          <div class="col-lg-4 m-auto">
+            <input
+              id="search_text"
+              type="text"
+              placeholder="Please Type Phone Name"
+              class="form-control py-3"
+            />
+            <div class="text-center">
+              <button
+                id="input_btn"
+                class="py-2 px-5 bg-warning border-0 my-3 text-white fw-bold d-none">
+                Search
+              </button>
+            </div>
+            <div id="not-found" class="mt-5"></div>
+          </div>
+      </div>
+
+      <div class="section my-5">
+        <div class="container">
+          <div id="phone-cont" class="row"></div>
+
+          <div class="text-center">
+            <button
+              id="show-all"
+              class="py-2 px-5 bg-danger border-0 text-white d-none"
+            >
+              Show All
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <section class="bg-dark">
+        <div class="container">
+          <div class="row">
+            <div class=""></div>
+            <div class="col-lg-4">
+              <h1 class="text-white">heres</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <section class="modal-container">
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div id="modal_body" class="modal-body text-center"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/function.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
