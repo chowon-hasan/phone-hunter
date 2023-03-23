@@ -6,6 +6,7 @@ const loadData = async (phoneName, datalimit) => {
     const response = await fetch(url);
     const data = await response.json();
     displayingData(data.data, datalimit);
+    console.log(data)
   } catch (err) {
     console.log(err);
   }
@@ -97,6 +98,7 @@ const loadPhoneDetails = async (id) => {
 };
 
 const modal = (details) => {
+  console.log(details)
   const modalTitle = document.getElementById("exampleModalLabel");
   const modalBody = document.getElementById("modal_body");
   modalTitle.innerHTML = `
@@ -110,5 +112,8 @@ const modal = (details) => {
   <p class="mt-3 text-danger" >Memory :<span class="text-dark"> ${details.mainFeatures.memory ? details.mainFeatures.memory : "No Memory"}</span></p>
   `;
 };
+
+
+
 
 // loadData("apple", 10);
