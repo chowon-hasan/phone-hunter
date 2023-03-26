@@ -6,7 +6,7 @@ const loadData = async (phoneName, datalimit) => {
     const response = await fetch(url);
     const data = await response.json();
     displayingData(data.data, datalimit);
-    console.log(data)
+    console.log(data);
   } catch (err) {
     console.log(err);
   }
@@ -28,11 +28,11 @@ const displayingData = (display, datalimit) => {
     noFound.innerHTML = "";
   } else if (display.length === 0) {
     noFound.innerHTML = `
-        <h3 class="text-center">No Phone Matched With This <span class="text-danger">${inputValue}</span> keyword</h3>
-        <p class="text-center">Please Input Correct Keyword
+        <h3 class="text-center text-white">No Phone Matched With This <span class="text-danger">${inputValue}</span> keyword</h3>
+        <p class="text-center text-white">Please Input Correct Keyword
         </p>
         `;
-        showAllBtn.classList.add("d-none");
+    showAllBtn.classList.add("d-none");
   } else {
     noFound.innerHTML = "";
     showAllBtn.classList.add("d-none");
@@ -48,8 +48,13 @@ const displayingData = (display, datalimit) => {
          <div class="card-img-container"><img src="${phone.image}" class="card-img" alt="..."></div>
        <div class="card-body">
       <h5 class="card-title">Model : ${phone.phone_name}</h5>
-       <p class="card-text"></p>
-       <button onclick="loadPhoneDetails('${phone.slug}')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+
+        <div class="d-flex justify-content-between align-items-center mt-4">
+            <button onclick="loadPhoneDetails('${phone.slug}')" class="modal-button-claass" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+          
+            <button onclick="loadPhoneDetails('${phone.slug}')" class="modal-button-claass">
+            Cart</button>
+        </div>
        </div>
  </div>
         </div>
@@ -67,25 +72,27 @@ const procces = (dataLimit) => {
 document.getElementById("input_btn").addEventListener("click", function () {
   procces(10);
   const inputBtn = document.getElementById("input_btn");
-  inputBtn.classList.add('d-none')
+  inputBtn.classList.add("d-none");
 });
-document.getElementById("search_text").addEventListener("keypress", function(e){
-  const input = document.getElementById("search_text");
-  const inputValue = input.value;
-  const inputBtn = document.getElementById("input_btn")
-  if(inputValue !== 0){
-    inputBtn.classList.remove('d-none')
-  }
-    if(e.key === 'Enter'){
-        procces(10);
-        inputBtn.classList.add('d-none')
+document
+  .getElementById("search_text")
+  .addEventListener("keypress", function (e) {
+    const input = document.getElementById("search_text");
+    const inputValue = input.value;
+    const inputBtn = document.getElementById("input_btn");
+    if (inputValue !== 0) {
+      inputBtn.classList.remove("d-none");
     }
-})
+    if (e.key === "Enter") {
+      procces(10);
+      inputBtn.classList.add("d-none");
+    }
+  });
 
 document.getElementById("show-all").addEventListener("click", function () {
   procces();
   const input = document.getElementById("search_text");
-  input.value = "" ;
+  input.value = "";
 });
 
 const loadPhoneDetails = async (id) => {
@@ -100,7 +107,7 @@ const loadPhoneDetails = async (id) => {
 };
 
 const modal = (details) => {
-  console.log(details)
+  console.log(details);
   const modalTitle = document.getElementById("exampleModalLabel");
   const modalBody = document.getElementById("modal_body");
   modalTitle.innerHTML = `
@@ -108,14 +115,25 @@ const modal = (details) => {
   `;
   modalBody.innerHTML = `
   <img class="text-center img-fluid" src="${details.image}">
-  <p class="mt-3 text-danger" >Date : <span class="text-dark"> ${details.releaseDate ? details.releaseDate : "NoRelease dae found for this device"}</span> </p>
-  <p class="mt-3 text-danger" >Storage :<span class="text-dark"> ${details.mainFeatures.storage ? details.mainFeatures.storage : "No Chipset"}</span></p>
-  <p class="mt-3 text-danger" >Display :<span class="text-dark"> ${details.mainFeatures.displaySize ? details.mainFeatures.displaySize : "No Display size"}</span></p>
-  <p class="mt-3 text-danger" >Memory :<span class="text-dark"> ${details.mainFeatures.memory ? details.mainFeatures.memory : "No Memory"}</span></p>
-  `;
+  <div class="modal-ptag">
+      <p class="mt-3 text-danger" >Date : <span class="text-dark"> ${
+        details.releaseDate
+          ? details.releaseDate
+          : "NoRelease dae found for this device"
+      }</span> </p>
+      <p class="mt-3 text-danger" >Storage :<span class="text-dark"> ${
+        details.mainFeatures.storage ? details.mainFeatures.storage : "No Chipset"
+      }</span></p>
+      <p class="mt-3 text-danger" >Display :<span class="text-dark"> ${
+        details.mainFeatures.displaySize
+          ? details.mainFeatures.displaySize
+          : "No Display size"
+      }</span></p>
+      <p class="mt-3 text-danger" >Memory :<span class="text-dark"> ${
+        details.mainFeatures.memory ? details.mainFeatures.memory : "No Memory"
+      }</span></p> 
+  </div>
+   `;
 };
-
-
-
 
 // loadData("apple", 10);
