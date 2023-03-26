@@ -23,7 +23,7 @@ const displayingData = (display, datalimit) => {
   const showAllBtn = document.getElementById("show-all");
 
   if (datalimit && display.length > 0) {
-    display = display.slice(0, 6);
+    display = display.slice(0, 3);
     showAllBtn.classList.remove("d-none");
     noFound.innerHTML = "";
   } else if (display.length === 0) {
@@ -42,15 +42,17 @@ const displayingData = (display, datalimit) => {
     const phoneDiv = document.createElement("div");
     phoneDiv.classList.add("col-lg-4");
     phoneDiv.innerHTML = `
+        <div class="phone-func-body">
         <div class="card mb-5 p-3">
         <h6>Brand : <span class="text-danger">${phone.brand}</span> </h6>
-        <div class="card-img-container"><img src="${phone.image}" class="card-img" alt="..."></div>
-        <div class="card-body">
-        <h5 class="card-title">Model : ${phone.phone_name}</h5>
-        <p class="card-text"></p>
-        <button onclick="loadPhoneDetails('${phone.slug}')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+         <div class="card-img-container"><img src="${phone.image}" class="card-img" alt="..."></div>
+       <div class="card-body">
+      <h5 class="card-title">Model : ${phone.phone_name}</h5>
+       <p class="card-text"></p>
+       <button onclick="loadPhoneDetails('${phone.slug}')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+       </div>
+ </div>
         </div>
-    </div>
         `;
     container.appendChild(phoneDiv);
   });

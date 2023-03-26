@@ -152,41 +152,53 @@
         </div>
       </section>
 
-      <div class="Search-container">
-        <h1 class="text-center my-5">Search Your Products Here</h1>
-        <div class="col-lg-4 m-auto">
-          <input
-            id="search_text"
-            type="text"
-            placeholder="Please Type Phone Name"
-            class="form-control py-3"
-          />
-          <div class="text-center">
-            <button
-              id="input_btn"
-              class="py-2 px-5 bg-warning border-0 my-3 text-white fw-bold d-none"
-            >
-              Search
-            </button>
+        <!-- SEARCH CONTAINER WITH SEARCH BAR  + Phone container-->
+     <section class="search-container-body">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-4 m-auto">
+            <div class="Search-container">
+              <h1 class="text-center my-5">Search Your Products Here</h1>
+                <input
+                  id="search_text"
+                  type="text"
+                  placeholder="Example: Apple"
+                  class="form-control py-3"
+                />
+                <div class="text-center">
+                  <button
+                    id="input_btn"
+                    class="py-2 px-5 bg-warning border-0 my-3 text-white fw-bold d-none">
+                    Search
+                  </button>
+                <div id="not-found" class="mt-5"></div>
+              </div>
+            </div>
           </div>
-          <div id="not-found" class="mt-5"></div>
-        </div>
-      </div>
-<!-- PHONE CONTAINER -->
-      <div class="section my-5">
-        <div class="container">
-          <div id="phone-cont" class="row"></div>
+          </div>
+          <!-- Phone container -->
+          <div class="row">
+            <div class="col-lg-8 m-auto">
+              <div id="parent-cont" class="max-container">
+                <div id="phone-cont" class="row my-5"></div>
+  
+              <div class="text-center">
+                <button
+                  id="show-all"
+                  class="py-2 px-5 bg-danger border-0 text-white d-none mb-5"
+                >
+                  Show All
+                </button>
+              </div>
+              </div>
+  
+            </div>
+          </div>
 
-          <div class="text-center">
-            <button
-              id="show-all"
-              class="py-2 px-5 bg-danger border-0 text-white d-none"
-            >
-              Show All
-            </button>
-          </div>
         </div>
       </div>
+     </section>
+
 <!-- FEATURES -->
       <section class="featurs bg-dark py-5">
         <div class="container">
